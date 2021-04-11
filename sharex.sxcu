@@ -1,0 +1,12 @@
+{
+  "Name": "ShareX Uploader",
+  "DestinationType": "FileUploader, ImageUploader",
+  "RequestURL": "127.0.0.1:9292/upload",
+  "RequestMethod": "POST",
+  "FileFormName": "file",
+  "Arguments": {
+    "secret_key": "secret",
+    "name": "$filename$",
+  },
+  "URL": "127.0.0.1:9292/file/$json:filename$$json:extension$"
+}
