@@ -13,7 +13,7 @@ Windows:
 ```bash
 git clone https://github.com/tsunyoku/Katagami.git
 pip3 install -r requirements.txt
-ren ext/config.sample*.py config*.py # After this, edit your config.py file with a text editor of your choice.
+COPY "ext\config.sample.py" config.py # After this, edit your config.py file with a text editor of your choice.
 ```
 
 ## Booting it up
@@ -27,4 +27,4 @@ hypercorn main.py -b 127.0.0.1:9823 # Change :9823 to the port that you specifie
 PRs are more than welcome, and we'd love to see new contributors! Also, feel free to create an issue, we'll try our best :]
 
 ## License
-No license, do what the fuck you want with the code. We could care less
+No license, do what you want with the code. Credit us if you're nice though, I guess.
