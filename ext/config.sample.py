@@ -4,3 +4,6 @@ mysql = {
     'password': 'ape',
     'user': 'tsunyoku'
 }
+
+port = 9292
+debug = True

@@ -1,0 +1,12 @@
+{
+  "Name": "Katagami",
+  "DestinationType": "FileUploader, ImageUploader",
+  "RequestURL": "files.tsunyoku.ml/upload",
+  "RequestMethod": "POST",
+  "FileFormName": "file",
+  "Headers": {
+    "name": "$filename$",
+    "token": "ape1",
+  },
+  "URL": "files.tsunyoku.ml/uploads/$json:username$$json:filename$$json:extension$"
+}
