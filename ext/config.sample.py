@@ -1,3 +1,5 @@
+AppName = 'Katagami'
+
 mysql = {
     'db': 'katagami',
     'host': 'localhost',
