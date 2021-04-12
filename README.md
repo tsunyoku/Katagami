@@ -7,7 +7,7 @@ Linux:
 git clone https://github.com/tsunyoku/Katagami.git
 mv ext/requirements.txt requirements.txt
 pip3 install -r requirements.txt && rm -rf requirements.txt
-mv ext/config.sample.py config.py # After this, edit your config.py file with a text editor of your choice.
+mv ext/config.sample.py config.py # Edit your config.py file with a text editor of your choice.
 ```
 
 Windows:
@@ -15,7 +15,7 @@ Windows:
 git clone https://github.com/tsunyoku/Katagami.git
 COPY "ext\requirements.txt" requirements.txt
 pip3 install -r requirements.txt
-COPY "ext\config.sample.py" config.py # After this, edit your config.py file with a text editor of your choice.
+COPY "ext\config.sample.py" config.py # Edit your config.py file with a text editor of your choice.
 ```
 
 ## Booting it up
