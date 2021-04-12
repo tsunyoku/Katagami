@@ -29,4 +29,4 @@ hypercorn main.py -b 127.0.0.1:9823 # Change :9823 to the port that you specifie
 PRs are more than welcome, and we'd love to see new contributors! Also, feel free to create an issue, we'll try our best :]
 
 ## License
-No license, do what you want with the code. Credit us if you're nice though, I guess.
+Licensed under the `Do What The F*ck You Want To Public License`. Learn more [here]http://www.wtfpl.net.
