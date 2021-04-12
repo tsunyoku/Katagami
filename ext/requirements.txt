@@ -1,6 +1,5 @@
-secrets==1.0.2
-orjson==3.5.1
-cmyui==1.7.0
-quart==0.14.1
-pathlib==1.0.1
-datetime==4.3
+secrets
+orjson
+cmyui
+quart
+pathlib
