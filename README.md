@@ -1,2 +1,2 @@
 # Katagami
-![:)](files.tsunyoku.ml/static/img/logo.png)
+![:)](https://images-na.ssl-images-amazon.com/images/I/61lvS2GuDqL.png)
