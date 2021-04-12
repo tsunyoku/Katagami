@@ -6,7 +6,7 @@ Linux:
 ```bash
 git clone https://github.com/tsunyoku/Katagami.git
 mv ext/requirements.txt requirements.txt
-pip3 install -r requirements.txt && rm -rf requirements.txt
+python3.9 -m pip install -r requirements.txt && rm -rf requirements.txt
 mv ext/config.sample.py config.py # Edit your config.py file with a text editor of your choice.
 ```
 
@@ -14,7 +14,7 @@ Windows:
 ```bash
 git clone https://github.com/tsunyoku/Katagami.git
 COPY "ext\requirements.txt" requirements.txt
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 COPY "ext\config.sample.py" config.py # Edit your config.py file with a text editor of your choice.
 ```
 
@@ -22,7 +22,7 @@ COPY "ext\config.sample.py" config.py # Edit your config.py file with a text edi
 
 ```python
 python3.9 main.py, or
-hypercorn main.py -b 127.0.0.1:9823 # Change :9823 to the port that you specified in config.py
+hypercorn main.py -b 127.0.0.1:9823 # Change :9823 to the port that you specified in config.py and ensure your NGINX config matches
 ```
 
 ## Contributing
