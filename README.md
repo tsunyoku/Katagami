@@ -5,13 +5,15 @@ Katagami is a Python 3.9 file uploader, using Quart and cmyui_pkg.
 Linux:
 ```bash
 git clone https://github.com/tsunyoku/Katagami.git
-pip3 install -r requirements.txt
+mv ext/requirements.txt requirements.txt
+pip3 install -r requirements.txt && rm -rf requirements.txt
 mv ext/config.sample.py config.py # After this, edit your config.py file with a text editor of your choice.
 ```
 
 Windows:
 ```bash
 git clone https://github.com/tsunyoku/Katagami.git
+COPY "ext\requirements.txt" requirements.txt
 pip3 install -r requirements.txt
 COPY "ext\config.sample.py" config.py # After this, edit your config.py file with a text editor of your choice.
 ```
