@@ -1,2 +1,2 @@
 # Katagami
-Python file uploader for ShareX
+![:)](https://files.tsunyoku.ml/static/img/logo.png)
