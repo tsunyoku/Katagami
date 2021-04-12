@@ -22,7 +22,7 @@ COPY "ext\config.sample.py" config.py # Edit your config.py file with a text edi
 
 ```python
 python3.9 main.py, or
-hypercorn main.py -b 127.0.0.1:9823 # Change :9823 to the port that you specified in config.py and ensure your NGINX config matches
+hypercorn main.py -b 127.0.0.1:9823 --reload # Change :9823 to the port that you specified in config.py and ensure your NGINX config matches
 ```
 
 ## Contributing
