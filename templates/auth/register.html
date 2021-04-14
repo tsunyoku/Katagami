@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/pages/auth/reg.css">
+
+<section class="hero">
+    <div class="hero-body is-transparent">
+      <div class="container is-transparent">
+        <div class="form_container">
+        <div class="columns is-centered is-transparent">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen has-text-light">
+            <form action="" class="box">
+              <div class="field">
+                <label for="" class="label">Username</label>
+                <div class="control has-icons-left">
+                  <input type="text" name="user" placeholder="" class="input" required>
+                  <span class="icon is-small is-left">
+                    <i class="far fa-id-card"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="" class="label">Email</label>
+                <div class="control has-icons-left">
+                  <input type="email" name="email" placeholder="" class="input" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-at"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="" class="label">Password</label>
+                <div class="control has-icons-left">
+                  <input type="password" name="pwd" placeholder="" class="input" required>
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="" class="label">Key</label>
+                <div class="control has-icons-left">
+                  <input type="text" name="key" placeholder="" class="input" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-key"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="" class="checkbox">
+                  <input type="checkbox">
+                 Remember me
+                </label>
+              </div>
+              <div class="field">
+                <button class="button is-success">
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  </section>
+{% endblock %}

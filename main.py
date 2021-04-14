@@ -12,9 +12,6 @@ import shutil
 
 app = Quart(__name__)
 
-now = datetime.now()
-dt = now.strftime("%H:%M:%S")
-
 glob.version = cmyui.Version(0, 1, 0)
 
 @app.before_serving
@@ -46,7 +43,7 @@ async def connections():
         exit()
     
     # uploader has started up without any issues
-    log(f'Katagami v{glob.version} started, at {dt}.', Ansi.GREEN)
+    log(f'==== Katagami v{glob.version} started ====', Ansi.GREEN)
 
 _app_name = glob.config.AppName
 @app.before_serving
@@ -54,31 +51,33 @@ _app_name = glob.config.AppName
 def appName() -> str:
     return _app_name
 
-
+""" home """
 @app.route('/')
 async def home():
     return await render_template('home.html')
 
+""" upload stuff """
 @app.route('/upload', methods=['GET', 'POST'])
 async def upload_file():
     files = await request.files
-    form = request.headers
+    #form = request.headers
     upload = (files.get('file'))
-    filename = (form.get('name'))
+    #filename = (form.get('name'))
 
     # authentication
-    token = (form.get('token'))
-    log(token)
-    log(filename)
-    user = await glob.db.fetch('SELECT name FROM users WHERE token = %s', [token])
-    if not user:
-        return 'Invalid token', 401
-    username = user['name']
+    #token = (form.get('token'))
+    log(files)
+    #log(token)
+    #log(filename)
+    # user = await glob.db.fetch('SELECT name FROM users WHERE token = %s', [token])
+    # if not user:
+    #     return 'Invalid token', 401
+    # username = user['name']
 
-    ext = os.path.splitext(filename)[1]
-    rnd = secrets.token_urlsafe(4)
-    upload.save(fr'{os.getcwd()}/uploads/{username}/{rnd}{ext}')
-    return orjson.dumps({"filename": rnd, "extension": ext, "username": username}), 200
+    # ext = os.path.splitext(filename)[1]
+    # rnd = secrets.token_urlsafe(4)
+    # upload.save(fr'{os.getcwd()}/uploads/{username}/{rnd}{ext}')
+    # return orjson.dumps({"filename": rnd, "extension": ext, "username": username}), 200
 
 @app.route('/uploads/<username>/<upload>')
 async def get_file(username, upload):
@@ -88,6 +87,22 @@ async def get_file(username, upload):
         return 'File not found', 400
     else:
         return await send_file(path)
+
+
+""" dashboard """
+@app.route('/dashboard')
+async def dashboard():
+    return await render_template('dashboard/dashboard.html')
+
+""" login, register """
+@app.route('/auth/login')
+async def login():
+    return await render_template('auth/login.html')
+
+@app.route('/auth/register')
+async def reg():
+    return await render_template('auth/register.html')
+
 
 if __name__ == '__main__':
     os.chdir(os.path.dirname(os.path.realpath(__file__))) # set cwd for consistency
