@@ -65,19 +65,19 @@ async def upload_file():
     #filename = (form.get('name'))
 
     # authentication
-    #token = (form.get('token'))
+    token = (form.get('token'))
     log(files)
-    #log(token)
-    #log(filename)
-    # user = await glob.db.fetch('SELECT name FROM users WHERE token = %s', [token])
-    # if not user:
-    #     return 'Invalid token', 401
-    # username = user['name']
+    log(token)
+    log(filename)
+     user = await glob.db.fetch('SELECT name FROM users WHERE token = %s', [token])
+     if not user:
+         return 'Invalid token', 401
+     username = user['name']
 
-    # ext = os.path.splitext(filename)[1]
-    # rnd = secrets.token_urlsafe(4)
-    # upload.save(fr'{os.getcwd()}/uploads/{username}/{rnd}{ext}')
-    # return orjson.dumps({"filename": rnd, "extension": ext, "username": username}), 200
+     ext = os.path.splitext(filename)[1]
+     rnd = secrets.token_urlsafe(4)
+     upload.save(fr'{os.getcwd()}/uploads/{username}/{rnd}{ext}')
+     return orjson.dumps({"filename": rnd, "extension": ext, "username": username}), 200
 
 @app.route('/uploads/<username>/<upload>')
 async def get_file(username, upload):
